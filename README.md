@@ -9,4 +9,9 @@
 - Activities
 - Evento onClick
 - SQLite 
+- RecyclerView (opcional)
+
+## Resultado
+
+![Demostración Resultado App](app.gif)
 
