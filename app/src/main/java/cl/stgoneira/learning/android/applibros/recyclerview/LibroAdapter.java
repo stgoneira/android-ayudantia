@@ -37,9 +37,14 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.LibroViewHol
         notifyDataSetChanged();
     }
 
+    public void modificarLibro(Libro libro, int posicion) {
+        libros.set(posicion, libro);
+        notifyItemChanged(posicion);
+    }
+
     public interface OnItemClickListener {
-        void onEditarClick(Libro libro);
-        void onEliminarClick(Libro libro);
+        void onEditarClick(Libro libro, int posicion);
+        void onEliminarClick(Libro libro, int posicion);
     }
 
     public class LibroViewHolder extends RecyclerView.ViewHolder {
@@ -63,7 +68,7 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.LibroViewHol
                         int posicion = getAdapterPosition();
                         if( posicion != RecyclerView.NO_POSITION) {
                             Libro libro = libros.get(posicion);
-                            listener.onEliminarClick(libro);
+                            listener.onEliminarClick(libro, posicion);
                         }
                     }
                 }
@@ -76,7 +81,7 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.LibroViewHol
                         int posicion = getAdapterPosition();
                         if( posicion != RecyclerView.NO_POSITION) {
                             Libro libro = libros.get(posicion);
-                            listener.onEditarClick(libro);
+                            listener.onEditarClick(libro, posicion);
                         }
                     }
                 }

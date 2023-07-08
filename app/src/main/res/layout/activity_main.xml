@@ -67,9 +67,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Guardar"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Crear"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnNuevo"
+        app:layout_constraintTop_toBottomOf="@+id/etAutor" />
+
+    <Button
+        android:id="@+id/btnNuevo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#3E8F21"
+        android:text="Nuevo"
+        app:icon="@drawable/ic_add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnGuardar"
         app:layout_constraintTop_toBottomOf="@+id/etAutor" />
 
     <TextView
@@ -87,6 +99,8 @@
         android:layout_height="0dp"
         android:layout_marginTop="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvMensaje" />
+        app:layout_constraintTop_toTopOf="@+id/tvMensaje"
+        app:layout_constraintVertical_bias="0.0" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
